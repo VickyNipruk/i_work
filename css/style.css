@@ -1,0 +1,509 @@
+/* Основні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; 
+    font-family: "EB Garamond", serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: #0f3460;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #f4c534; 
+    font-size: 3rem; 
+    font-family: "Great Vibes", cursive;
+    font-weight: bold; 
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; 
+
+}
+
+/* Список посилань */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #f4c534;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav-links li a:hover {
+    color: #ff6f61;
+    text-shadow: 0 0 10px #ff6f61;
+}
+
+/* Перемикач для мобільного меню */
+.magic-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.magic-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: #f4c534;
+    transition: all 0.3s ease;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        flex-direction: column;
+        background-color: #0f3460;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    .nav-links.active {
+        height: 200px;
+    }
+
+    .magic-toggle {
+        display: flex;
+    }
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.card-img-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 4rem;
+    color: #f4c534;
+    font-family: "Great Vibes", cursive;
+}   
+
+.card-text-1 {
+    font-size: 1.5rem;
+    color: #f4c534;
+    font-family: "EB Garamond", serif;
+    text-align: center;
+    z-index: 10;
+}   
+  
+.candle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+  
+  .candle {
+    width: 12px;
+    height: 40px;
+    background-color: #f3c200; 
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8); 
+  }
+  
+  .candle::after {
+    content: '';
+    width: 4px;
+    height: 8px;
+    background-color: #ffcc00; 
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 50%;
+  }
+  
+  /* Стилі для футера */
+footer {
+    background-color: #0f3460;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #f0a500; 
+}
+
+footer p {
+    font-size: 14px;
+}
+
+main {
+    background-color:#0f3460;
+    margin-bottom: -20px;
+}
+
+.main-container {
+    width: 95%;
+    text-align: center;
+    background-color: #e9c576;
+    color: #0f3460;
+    margin-top: 91px;
+    font-family: "EB Garamond", serif;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+p {
+    color: white;
+}
+
+.audio-icon{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.audio-player {
+    flex-grow: 1; 
+}
+
+.audio-icon div {
+    margin: 0 10px;
+}
+
+.fb-share-button {
+    margin-right: 10px;
+}
+
+.fb-share-button a {
+    display: none;
+}
+
+.cont {
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    flex-wrap: wrap;        
+    gap: 20px;                
+    margin-top: 20px;         
+}
+@media (max-width: 768px) {
+    .cont {
+        flex-direction: column; 
+        align-items: center;     
+    }
+
+    .hp-character {
+        width: 80px;  
+        height: 120px; 
+    }
+}
+
+  .hp-character {
+    display: inline-block;
+    margin: 3vmin;
+    width: 30vmin;
+    height: 30vmin;
+    aspect-ratio: 1/1;
+    border-radius: 20%;
+    box-shadow: 0 1vmin 4vmin;
+  }
+  
+  .hp-character.griffindor {
+    background:
+      linear-gradient(69deg, #0000 30%, #da8 0 70%, #0000 0) 27% 20% / 10% 7%,
+      conic-gradient(at 90% 100%, #0000 320deg, #da8 0 350deg, #0000 0) 25% 27% / 10% 7%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 22% 50% / 5% 5%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 72% 50% / 5% 5%,
+      radial-gradient(farthest-side, #000 90%, #0000 0) 20% 55% / 20% 20%,
+      radial-gradient(farthest-side, #000 90%, #0000 0) 80% 55% / 20% 20%,
+      linear-gradient(to right, #000 7%, #0000 0 43%, #000 0 57%, #0000 0 93%, #000 0) 0 52% / 100% 2.5%,
+      radial-gradient(circle at 25% 50%, #0000 22%, #000 0 25%, #0000 0) 0 52% / 100% 40%,
+      radial-gradient(circle at 75% 50%, #0000 22%, #000 0 25%, #0000 0) 0 52% / 100% 40%,
+      repeating-linear-gradient(to right, brown 0 20%, gold 0 40%) 0 100% / 100% 25%,
+      linear-gradient(#0000 73%, #000 0 90%, #0000 0),
+      radial-gradient(farthest-side, #642 99.9%, #0000 0) -52% -60% / 52% 60%,
+      radial-gradient(farthest-side, #642 99.9%, #0000 0) 300% -58% / 90% 56%,
+      radial-gradient(farthest-side, #fca 99.9%, #0000 0) 320% -50% / 90% 55%,
+      radial-gradient(farthest-side, #642 99.9%, #0000 0) 500% -52% / 95% 55%,
+      linear-gradient(#fca 0 0)
+      ;
+    background-repeat: no-repeat;
+    color: #d006;
+  }
+  
+  
+  .hp-character.slytherin {
+    background:
+      linear-gradient(5deg, #0000 40%, #ffe 0 70%, #0000 0) 15% 30% / 30% 5%,
+      linear-gradient(-5deg, #0000 40%, #ffe 0 70%, #0000 0) 85% 30% / 30% 5%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 24% 45% / 5% 5%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 70% 45% / 5% 5%,
+      radial-gradient(farthest-side, #333 90%, #0000 0) 23% 50% / 20% 20%,
+      radial-gradient(farthest-side, #333 90%, #0000 0) 77% 50% / 20% 20%,
+      repeating-linear-gradient(to right, green 0 20%, #eee 0 40%) 0 100% / 100% 25%,
+      linear-gradient(#0000 73%, #000 0 90%, #0000 0),
+      radial-gradient(farthest-side, #ffe 99.9%, #0000 0) -300% -70% / 90% 50%,
+      radial-gradient(farthest-side, #ffe 99.9%, #0000 0) 400% -70% / 90% 50%,
+      linear-gradient(#f8d8b8 0 0)
+      ;
+    background-repeat: no-repeat;
+    color: #0006;
+  }
+  
+  .hp-character.ravenclaw {
+    background:
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 24% 45% / 5% 5%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 70% 45% / 5% 5%,
+      radial-gradient(farthest-side, #111 90%, #0000 0) 23% 50% / 20% 20%,
+      radial-gradient(farthest-side, #111 90%, #0000 0) 77% 50% / 20% 20%,
+      repeating-linear-gradient(to right, #203aa0 0 20%, #b94 0 40%) 0 100% / 100% 25%,
+      linear-gradient(#0000 73%, #000 0 90%, #0000 0),
+      radial-gradient(farthest-side, #210 99.9%, #0000 0) -300% -70% / 90% 50%,
+      radial-gradient(farthest-side, #210 99.9%, #0000 0) 400% -70% / 90% 50%,
+      radial-gradient(farthest-side, #ffe8b8 99.9%, #0000 0) -350% -65% / 90% 50%,
+      radial-gradient(farthest-side, #ffe8b8 99.9%, #0000 0) 450% -65% / 90% 50%,
+      radial-gradient(farthest-side, #210 99.9%, #0000 0) 200% -55% / 80% 48%,
+      radial-gradient(farthest-side, #210 99.9%, #0000 0) -150% -55% / 86% 47%,
+      radial-gradient(circle at 100% 0%, #0000 0 35%, #432 0 40%, #0000 0 50%, #432 0 55%, #0000 0 65%, #432 0 70%, #0000 0) 13.5% 45% / 20% 10%,
+      radial-gradient(circle at 0% 0%, #0000 0 35%, #432 0 40%, #0000 0 50%, #432 0 55%, #0000 0 65%, #432 0 70%, #0000 0) 87% 45% / 20% 10%,
+      linear-gradient(#ffe8b8 0 0)
+      ;
+    background-repeat: no-repeat;
+    color: #2366;
+  }
+  
+  
+  .hp-character.hufflepuff {
+    background:
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 24% 48% / 5% 5%,
+      radial-gradient(farthest-side, #fff 90%, #0000 0) 70% 48% / 5% 5%,
+      radial-gradient(farthest-side, #111 90%, #0000 0) 23% 53% / 20% 20%,
+      radial-gradient(farthest-side, #111 90%, #0000 0) 77% 53% / 20% 20%,
+      repeating-linear-gradient(to right, #222 0 20%, #fd0 0 40%) 0 100% / 100% 25%,
+      linear-gradient(#0000 73%, #000 0 90%, #0000 0),
+      radial-gradient(farthest-side, #111 99.9%, #0000 0) -250% -70% / 90% 54%,
+      radial-gradient(farthest-side, #111 99.9%, #0000 0) 300% -70% / 90% 53%,
+      radial-gradient(farthest-side, #963 99.9%, #0000 0) -350% -65% / 90% 54%,
+      radial-gradient(farthest-side, #963 99.9%, #0000 0) 450% -65% / 90% 53%,
+      radial-gradient(farthest-side, #111 99.9%, #0000 0) 200% -55% / 80% 50%,
+      radial-gradient(farthest-side, #111 99.9%, #0000 0) -150% -55% / 86% 51%,
+      radial-gradient(farthest-side at 52% 120%, #0000 70%, #111 0 99%, #0000 0) 18% 32% / 30% 10%,
+      radial-gradient(farthest-side at 49% 120%, #0000 70%, #111 0 99%, #0000 0) 82% 32% / 30% 10%,
+      linear-gradient(#963 0 0)
+      ;
+    background-repeat: no-repeat;
+    color: #0005;
+  }
+
+  .heroes {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+    flex-wrap: wrap;
+    background-color: #0f3460;
+}
+
+.hero {
+    position: relative;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 2px solid gold;
+    color: gold;
+}
+
+.hero h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Ефекти наведення */
+.hero:hover {
+    transform: scale(1.05);
+}
+
+.hero:hover img {
+    transform: scale(1.1);
+}
+
+/* Додаткові стилі для мобільних */
+@media screen and (max-width: 768px) {
+    .heroes {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Контейнер для відео та карти */
+.video {
+    display: flex; /* Використовуємо flexbox для вирівнювання */
+    justify-content: space-between; /* Додаємо відстань між елементами */
+    gap: 20px; /* Встановлюємо відстань між елементами */
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при необхідності */
+    margin: 20px; /* Додаємо відступи по периметру */
+}
+
+/* Для відео */
+.video-item {
+    width: 28%; /* Ширина відео — майже половина контейнера */
+    height: 315px; /* Висота відео */
+    max-width: 560px; /* Максимальна ширина */
+}
+
+/* Для карти */
+.map-item {
+    width: 28%; /* Ширина карти — майже половина контейнера */
+    height: 315px; /* Висота карти */
+    max-width: 560px; /* Максимальна ширина */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    margin-top: 80px;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    align-items:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    width: 60%;
+    padding-right: 30px;
+}
+
+.image {
+    width: 30%;
+    max-width: 300px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+}
+
+.author-info img {
+    width: 280px;
+    height: 250px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+
+/* Стадії для мобільних пристроїв */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        width: 80%;
+        padding-right: 0;
+    }
+
+    .image {
+        margin-top: 20px;
+        width: 60%;
+    }
+}
+
+#carouselExample {
+    width: 60%; 
+    margin: 0 auto; 
+}
+
+.carousel-item img {
+    height: auto;
+    max-height: 300px; 
+    object-fit: cover; 
+}
