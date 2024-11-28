@@ -106,7 +106,18 @@ function loadQuestion() {
 
 function showResult() {
     const maxScore = Math.max(...Object.values(scores));
-    const [house] = Object.entries(scores).find(([key, value]) => value === maxScore);
+    const topHouses = Object.entries(scores)
+        .filter(([key, value]) => value === maxScore)
+        .map(([key]) => key);
+
+    let selectedHouse;
+    if (topHouses.length === 1) {
+        selectedHouse = topHouses[0];
+    } else {
+        // Пріоритетний вибір: Gryffindor > Ravenclaw > Hufflepuff > Slytherin
+        const priority = ['gryffindor', 'ravenclaw', 'hufflepuff', 'slytherin'];
+        selectedHouse = topHouses.sort((a, b) => priority.indexOf(a) - priority.indexOf(b))[0];
+    }
 
     const houseNames = {
         gryffindor: "Грифіндор",
@@ -116,7 +127,7 @@ function showResult() {
     };
 
     quiz.style.display = 'none';
-    result.textContent = `Твій факультет: ${houseNames[house]}!`;
+    result.textContent = `Твій факультет: ${houseNames[selectedHouse]}!`;
 }
 
 loadQuestion();
